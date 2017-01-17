@@ -5,4 +5,4 @@ import list_files
 
 if __name__ == '__main__':
     file_count = list_files.list_files("./scripts")
-    print 'Have listed {0} files.'.format(file_count)
+    print("Have listed %d files." % file_count)
