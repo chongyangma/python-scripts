@@ -8,4 +8,4 @@ install:
   - pip install Pillow
 
 script:
-  - coverage run tests.py
+  - python tests.py
