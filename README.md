@@ -1,4 +1,7 @@
 # Python Scripts
+
+[![Build Status](https://travis-ci.org/chongyangma/python-scripts.svg?branch=master)](https://travis-ci.org/chongyangma/python-scripts)
+
 Some useful python scripts (mostly for batch processing of files). Launching each script without any argument will print out the usage information.
 
 ## Descriptions
@@ -22,5 +25,5 @@ List files in a folder.
 ```
 usage: list_files.py [-h] [--output_file OUTPUT_FILE]
                      [--partial_name PARTIAL_NAME]
-                     folder_path
+                     input_path
 ```
