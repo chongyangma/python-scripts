@@ -3,6 +3,7 @@ import argparse
 
 def list_files(input_path, partial_name=None, output_file='output.txt'):
     fout = open(output_file, "w")
+    count = 0
     for path, subdirs, files in os.walk(input_path):
         for file_name in files:
             if partial_name and partial_name not in file_name:
@@ -10,6 +11,8 @@ def list_files(input_path, partial_name=None, output_file='output.txt'):
             f = os.path.join(input_path, file_name)
             print(file_name)
             fout.write(str(f) + "\n")
+            count = count + 1
+    return count
 
 if __name__ == "__main__" :
     parser = argparse.ArgumentParser(description='List the files in a folder.')

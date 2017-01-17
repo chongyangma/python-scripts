@@ -4,4 +4,5 @@ sys.path.insert(0, './scripts')
 import list_files
 
 if __name__ == '__main__':
-    list_files.list_files("./scripts")
+    file_count = list_files.list_files("./scripts")
+    print 'Have listed {0} files.'.format(file_count)
