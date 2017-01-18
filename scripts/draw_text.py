@@ -12,7 +12,8 @@ def is_image(file_name):
 
 def draw_text(input_path, output_path, text=None, font_size=20,
  pos_x=5, pos_y=5, color_r=255, color_g=255, color_b=255):
-    fnt = ImageFont.truetype("Arial.ttf", font_size)
+    #fnt = ImageFont.truetype("Arial.ttf", font_size)
+    fnt = ImageFont.load_default().font
 
     if not os.path.exists(output_path):
         os.makedirs(output_path)

@@ -11,11 +11,10 @@ Some useful python scripts (mostly for batch processing of files). Launching eac
 Draw text on images in a folder. [Python Imaging Library (PIL)](http://www.pythonware.com/products/pil/) is required.
 
 ```
-usage: draw_text.py [-h] [--output_folder OUTPUT_FOLDER]
-                    [--font_size FONT_SIZE] [--pos_x POS_X] [--pos_y POS_Y]
-                    [--color_r COLOR_R] [--color_g COLOR_G]
+usage: draw_text.py [-h] [--text TEXT] [--font_size FONT_SIZE] [--pos_x POS_X]
+                    [--pos_y POS_Y] [--color_r COLOR_R] [--color_g COLOR_G]
                     [--color_b COLOR_B]
-                    input_path
+                    input_path output_path
 ```
 
 #### [list_files.py](https://github.com/chongyangma/python-scripts/blob/master/scripts/list_files.py)
