@@ -10,10 +10,12 @@ def is_image(file_name):
     else:
         return False
 
-def draw_text(input_path, output_path, text=None, font_size=20,
+def draw_text(input_path, output_path, text=None, font_size=0,
  pos_x=5, pos_y=5, color_r=255, color_g=255, color_b=255):
-    #fnt = ImageFont.truetype("Arial.ttf", font_size)
-    fnt = ImageFont.load_default().font
+    if font_size > 0:
+        fnt = ImageFont.truetype("Arial.ttf", font_size)
+    else:
+        fnt = ImageFont.load_default().font
 
     if not os.path.exists(output_path):
         os.makedirs(output_path)
@@ -43,7 +45,7 @@ if __name__ == "__main__" :
     parser.add_argument('input_path', type=str, help='Path to the input folder')
     parser.add_argument('output_path', type=str, help='Path to the output folder')
     parser.add_argument('--text', type=str, default=None, help='Text to draw')
-    parser.add_argument('--font_size', type=int, default=20, help='Font size')
+    parser.add_argument('--font_size', type=int, default=0, help='Font size')
     parser.add_argument('--pos_x', type=int, default=5, help='Start position X')
     parser.add_argument('--pos_y', type=int, default=5, help='Start position Y')
     parser.add_argument('--color_r', type=int, default=255, help='R value of the text color')
