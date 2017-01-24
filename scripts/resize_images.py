@@ -33,7 +33,7 @@ def resize_image(input_path, output_path, wd=0, ht=0):
     if sz[1] > ht:
         py = (sz[1] - ht) / 2
     if px > 0 or py > 0:
-        img = img.crop((px, py, px + wd, ht))
+        img = img.crop((px, py, px + wd, py + ht))
     # Save the output image
     img.save(output_path)
 
