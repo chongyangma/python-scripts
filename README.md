@@ -6,6 +6,14 @@ Some useful python scripts (mostly for batch processing of files). Launching eac
 
 ## Descriptions
 
+#### [resize_images.py](https://github.com/chongyangma/python-scripts/blob/master/scripts/resize_images.py)
+
+Resize images in a folder. [Python Imaging Library (PIL)](http://www.pythonware.com/products/pil/) is required.
+
+```
+usage: resize_images.py [-h] [--wd WD] [--ht HT] input_path output_path
+```
+
 #### [draw_text.py](https://github.com/chongyangma/python-scripts/blob/master/scripts/draw_text.py)
 
 Draw text on images in a folder. [Python Imaging Library (PIL)](http://www.pythonware.com/products/pil/) is required.

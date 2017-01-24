@@ -8,7 +8,7 @@ def is_image(file_name):
     else:
         return False
 
-def resize_image(input_path, output_path, wd=720, ht=960):
+def resize_image(input_path, output_path, wd=0, ht=0):
     img = Image.open(input_path)
     # Resize the image
     sz = img.size
@@ -37,7 +37,7 @@ def resize_image(input_path, output_path, wd=720, ht=960):
     # Save the output image
     img.save(output_path)
 
-def resize_images(input_path, output_path, wd=720, ht=960):
+def resize_images(input_path, output_path, wd=0, ht=0):
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
