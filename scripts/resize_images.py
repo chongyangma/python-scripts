@@ -20,10 +20,10 @@ def resize_image(input_path, output_path, wd=0, ht=0):
     ratio_src = float(sz[0]) / float(sz[1])
     if ratio_src > ratio_dst:
         wd_new = int(ht * ratio_src)
-        img = img.resize((wd_new, ht), Image.ANTIALIAS)
+        img = img.resize((wd_new, int(ht)), Image.ANTIALIAS)
     else:
         ht_new = int(wd / ratio_src)
-        img = img.resize((wd, ht_new), Image.ANTIALIAS)
+        img = img.resize((int(wd), ht_new), Image.ANTIALIAS)
     # Crop the image
     sz = img.size
     px = 0
