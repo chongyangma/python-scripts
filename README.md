@@ -6,6 +6,14 @@ Some useful python scripts (mostly for batch processing of files). Launching eac
 
 ## Descriptions
 
+#### [reverse_sequence.py](https://github.com/chongyangma/python-scripts/blob/master/scripts/reverse_sequence.py)
+
+Reverse the order of a file sequence in an input folder and save the renamed file sequence into an output folder.
+
+```
+usage: reverse_sequence.py [-h] [--pattern PATTERN] input_path output_path
+```
+
 #### [resize_images.py](https://github.com/chongyangma/python-scripts/blob/master/scripts/resize_images.py)
 
 Resize images in a folder. [Python Imaging Library (PIL)](http://www.pythonware.com/products/pil/) is required.
