@@ -38,7 +38,6 @@ usage: draw_text.py [-h] [--text TEXT] [--font_size FONT_SIZE] [--pos_x POS_X]
 List files in a folder.
 
 ```
-usage: list_files.py [-h] [--output_file OUTPUT_FILE]
-                     [--partial_name PARTIAL_NAME]
+usage: list_files.py [-h] [--output_file OUTPUT_FILE] [--pattern PATTERN]
                      input_path
 ```
