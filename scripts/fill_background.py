@@ -8,14 +8,14 @@ def is_image(file_name):
     else:
         return False
 
-def fill_image_background(input_path, output_path):
+def fill_image_background(input_path, output_path, color_r=0, color_g=0, color_b=0):
     img = Image.open(input_path)
     r, g, b, alpha = img.split()
-    output = Image.new(img.mode, img.size, "black")
+    output = Image.new(img.mode, img.size, (color_r, color_g, color_b))
     output = Image.alpha_composite(output, img)
     output.save(output_path)
 
-def fill_background(input_path, output_path):
+def fill_background(input_path, output_path, color_r=0, color_g=0, color_b=0):
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
@@ -26,7 +26,7 @@ def fill_background(input_path, output_path):
                 continue
             input_file_path = os.path.join(path, file_name)
             output_file_path = os.path.join(output_path, file_name)
-            fill_image_background(input_file_path, output_file_path)
+            fill_image_background(input_file_path, output_file_path, color_r, color_g, color_b)
             count = count + 1
 
     return count
@@ -36,9 +36,15 @@ if __name__ == "__main__" :
     parser = argparse.ArgumentParser(description='Fill background of images in a folder based on alpha channel.')
     parser.add_argument('input_path', type=str, help='Path to the input folder')
     parser.add_argument('output_path', type=str, help='Path to the output folder')
+    parser.add_argument('--color_r', type=int, default=0, help='R value of the background color')
+    parser.add_argument('--color_g', type=int, default=0, help='G value of the background color')
+    parser.add_argument('--color_b', type=int, default=0, help='B value of the background color')
 
     args = parser.parse_args()
     input_path = args.input_path
     output_path = args.output_path
+    color_r = args.color_r
+    color_g = args.color_g
+    color_b = args.color_b
 
-    fill_background(input_path, output_path)
+    fill_background(input_path, output_path, color_r, color_g, color_b)
