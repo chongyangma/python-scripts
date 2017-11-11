@@ -10,10 +10,13 @@ def is_image(file_name):
 
 def fill_image_background(input_path, output_path, color_r=0, color_g=0, color_b=0):
     img = Image.open(input_path)
+    if img.mode != 'RGBA':
+        return False
     r, g, b, alpha = img.split()
     output = Image.new(img.mode, img.size, (color_r, color_g, color_b))
     output = Image.alpha_composite(output, img)
     output.save(output_path)
+    return True
 
 def fill_background(input_path, output_path, color_r=0, color_g=0, color_b=0):
     if not os.path.exists(output_path):
@@ -26,8 +29,9 @@ def fill_background(input_path, output_path, color_r=0, color_g=0, color_b=0):
                 continue
             input_file_path = os.path.join(path, file_name)
             output_file_path = os.path.join(output_path, file_name)
-            fill_image_background(input_file_path, output_file_path, color_r, color_g, color_b)
-            count = count + 1
+            flag = fill_image_background(input_file_path, output_file_path, color_r, color_g, color_b)
+            if flag:
+                count = count + 1
 
     return count
 
@@ -47,4 +51,5 @@ if __name__ == "__main__" :
     color_g = args.color_g
     color_b = args.color_b
 
-    fill_background(input_path, output_path, color_r, color_g, color_b)
+    count = fill_background(input_path, output_path, color_r, color_g, color_b)
+    print("Have filled the background of " + str(count) + " images.")
