@@ -41,3 +41,13 @@ List files in a folder.
 usage: list_files.py [-h] [--output_file OUTPUT_FILE] [--pattern PATTERN]
                      input_path
 ```
+
+#### [fill_background.py](https://github.com/chongyangma/python-scripts/blob/master/scripts/fill_background.py)
+
+Fill the background of images of RGBA format in a folder with a certain color. [Python Imaging Library (PIL)](http://www.pythonware.com/products/pil/) is required.
+
+```
+usage: fill_background.py [-h] [--color_r COLOR_R] [--color_g COLOR_G]
+                          [--color_b COLOR_B] [--wd WD] [--ht HT]
+                          input_path output_path
+```
