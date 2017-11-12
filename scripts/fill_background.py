@@ -23,7 +23,11 @@ def fill_image_background(input_path, output_path, color_r=0, color_g=0, color_b
         py = int((ht - img.size[1]) / 2)
         bg.paste(output, (px, px, px + img.size[0], py + img.size[1]))
         output = bg.copy()
+        bg.paste(alpha, (px, px, px + img.size[0], py + img.size[1]))
+        alpha = bg.copy()
     output.save(output_path)
+    output_path = output_path.replace(".png", "_alpha.png")
+    alpha.save(output_path)
     return True
 
 def fill_background(input_path, output_path, color_r=0, color_g=0, color_b=0, wd=0, ht=0):
